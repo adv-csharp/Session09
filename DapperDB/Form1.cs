@@ -100,13 +100,14 @@ namespace DapperDB
 
         private void updateBalance(int amount, int delay)
         {
-
-            var newBalance = balance + amount;
-            Thread.Sleep(delay);
-            var threadName = Thread.CurrentThread.Name;
-            listBox1.Invoke(() => listBox1.Items.Add($"{threadName}: balance: {balance} - newBalance: {newBalance} - amout: {amount}"));
-            balance = newBalance;
-
+            lock (this)
+            {
+                var newBalance = balance + amount;
+                Thread.Sleep(delay);
+                var threadName = Thread.CurrentThread.Name;
+                listBox1.Invoke(() => listBox1.Items.Add($"{threadName}: balance: {balance} - newBalance: {newBalance} - amout: {amount}"));
+                balance = newBalance;
+            }
 
             labelBalance.Invoke(() => labelBalance.Text = balance.ToString());
         }

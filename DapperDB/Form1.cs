@@ -40,5 +40,38 @@ namespace DapperDB
 
             MessageBox.Show(role.Name);
         }
+
+        private void btnFindRoles_Click(object sender, EventArgs e)
+        {
+            using var connection = new SqlConnection(connString);
+            var roles = connection.Query<Role>("SELECT * FROM [dbo].[Roles] ");
+            dataGridView1.DataSource = roles;
+        }
+
+        private void btnFindRolesAndUsers_Click(object sender, EventArgs e)
+        {
+            using var connection = new SqlConnection(connString);
+            var result = connection.QueryMultiple("SELECT * FROM [dbo].[Roles];  SELECT * FROM [dbo].[Users]; ");
+
+            dataGridView1.DataSource = result.Read<Role>();
+            dataGridView2.DataSource = result.Read<User>();
+        }
+
+        private void sendEMail_Click(object sender, EventArgs e)
+        {
+            //Thread
+
+            SendEMail();
+        }
+
+        private static void SendEMail()
+        {
+            // I/O : Input/Output -> e.g. File, Email, Network, DB
+
+            for (int i = 0; i < 10; i++)
+            {
+                Thread.Sleep(500);
+            }
+        }
     }
 }

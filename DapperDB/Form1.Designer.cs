@@ -31,6 +31,13 @@
             this.btnAddRole = new System.Windows.Forms.Button();
             this.btnAddRole2 = new System.Windows.Forms.Button();
             this.btnFindRole = new System.Windows.Forms.Button();
+            this.btnFindRoles = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnFindRolesAndUsers = new System.Windows.Forms.Button();
+            this.sendEMail = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddRole
@@ -63,16 +70,71 @@
             this.btnFindRole.UseVisualStyleBackColor = true;
             this.btnFindRole.Click += new System.EventHandler(this.btnFindRole_Click);
             // 
+            // btnFindRoles
+            // 
+            this.btnFindRoles.Location = new System.Drawing.Point(12, 99);
+            this.btnFindRoles.Name = "btnFindRoles";
+            this.btnFindRoles.Size = new System.Drawing.Size(162, 23);
+            this.btnFindRoles.TabIndex = 3;
+            this.btnFindRoles.Text = "Find Roles";
+            this.btnFindRoles.UseVisualStyleBackColor = true;
+            this.btnFindRoles.Click += new System.EventHandler(this.btnFindRoles_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(212, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(576, 212);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(212, 230);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(576, 212);
+            this.dataGridView2.TabIndex = 5;
+            // 
+            // btnFindRolesAndUsers
+            // 
+            this.btnFindRolesAndUsers.Location = new System.Drawing.Point(12, 230);
+            this.btnFindRolesAndUsers.Name = "btnFindRolesAndUsers";
+            this.btnFindRolesAndUsers.Size = new System.Drawing.Size(162, 23);
+            this.btnFindRolesAndUsers.TabIndex = 6;
+            this.btnFindRolesAndUsers.Text = "Find Roles And Users";
+            this.btnFindRolesAndUsers.UseVisualStyleBackColor = true;
+            this.btnFindRolesAndUsers.Click += new System.EventHandler(this.btnFindRolesAndUsers_Click);
+            // 
+            // sendEMail
+            // 
+            this.sendEMail.Location = new System.Drawing.Point(12, 259);
+            this.sendEMail.Name = "sendEMail";
+            this.sendEMail.Size = new System.Drawing.Size(162, 23);
+            this.sendEMail.TabIndex = 7;
+            this.sendEMail.Text = "Send EMail";
+            this.sendEMail.UseVisualStyleBackColor = true;
+            this.sendEMail.Click += new System.EventHandler(this.sendEMail_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sendEMail);
+            this.Controls.Add(this.btnFindRolesAndUsers);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnFindRoles);
             this.Controls.Add(this.btnFindRole);
             this.Controls.Add(this.btnAddRole2);
             this.Controls.Add(this.btnAddRole);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -82,5 +144,10 @@
         private Button btnAddRole;
         private Button btnAddRole2;
         private Button btnFindRole;
+        private Button btnFindRoles;
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
+        private Button btnFindRolesAndUsers;
+        private Button sendEMail;
     }
 }

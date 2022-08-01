@@ -79,5 +79,33 @@ namespace DapperDB
             }
             //Cross-thread operation not valid
         }
+
+        int balance = 0;
+        private void btnRaceCondition_Click(object sender, EventArgs e)
+        {
+            balance = 100;
+            var rnd = new Random();
+            var t1 = new Thread(() => updateBalance(10, rnd.Next(1000, 3000)));
+            var t2 = new Thread(() => updateBalance(-50, rnd.Next(1000, 3000)));
+            var t3 = new Thread(() => updateBalance(20, rnd.Next(1000, 3000)));
+            t1.Start();
+            t2.Start();
+            t3.Start();
+            
+        }
+
+        private void updateBalance(int amount, int delay)
+        {
+            var newBalance = balance + amount;
+            Thread.Sleep(delay);
+            balance = newBalance;
+
+            labelBalance.Invoke(() => labelBalance.Text = balance.ToString());
+        }
+
+        private void labelBalance_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

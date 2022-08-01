@@ -60,8 +60,10 @@ namespace DapperDB
         private void sendEMail_Click(object sender, EventArgs e)
         {
             //Thread
+            var thread = new Thread(() => SendEMail());
+            thread.Start();
 
-            SendEMail();
+
         }
 
         private static void SendEMail()
@@ -70,7 +72,7 @@ namespace DapperDB
 
             for (int i = 0; i < 10; i++)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
     }

@@ -93,7 +93,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(212, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(576, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(417, 212);
             this.dataGridView1.TabIndex = 4;
             // 
             // dataGridView2
@@ -102,7 +102,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(212, 230);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(576, 212);
+            this.dataGridView2.Size = new System.Drawing.Size(417, 212);
             this.dataGridView2.TabIndex = 5;
             // 
             // btnFindRolesAndUsers
@@ -140,9 +140,9 @@
             this.panel1.Controls.Add(this.btnRaceCondition);
             this.panel1.Controls.Add(this.sendEMail);
             this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Location = new System.Drawing.Point(794, 12);
+            this.panel1.Location = new System.Drawing.Point(635, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 430);
+            this.panel1.Size = new System.Drawing.Size(599, 430);
             this.panel1.TabIndex = 9;
             // 
             // labelBalance
@@ -170,7 +170,7 @@
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(16, 139);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(401, 199);
+            this.listBox1.Size = new System.Drawing.Size(580, 199);
             this.listBox1.TabIndex = 10;
             // 
             // btnRaceCondition

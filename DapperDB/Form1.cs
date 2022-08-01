@@ -83,11 +83,15 @@ namespace DapperDB
         int balance = 0;
         private void btnRaceCondition_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             balance = 100;
             var rnd = new Random();
             var t1 = new Thread(() => updateBalance(10, rnd.Next(1000, 3000)));
             var t2 = new Thread(() => updateBalance(-50, rnd.Next(1000, 3000)));
             var t3 = new Thread(() => updateBalance(20, rnd.Next(1000, 3000)));
+            t1.Name = "t1";
+            t2.Name = "t2";
+            t3.Name = "t3";
             t1.Start();
             t2.Start();
             t3.Start();
@@ -96,9 +100,13 @@ namespace DapperDB
 
         private void updateBalance(int amount, int delay)
         {
+
             var newBalance = balance + amount;
             Thread.Sleep(delay);
+            var threadName = Thread.CurrentThread.Name;
+            listBox1.Invoke(() => listBox1.Items.Add($"{threadName}: balance: {balance} - newBalance: {newBalance} - amout: {amount}"));
             balance = newBalance;
+
 
             labelBalance.Invoke(() => labelBalance.Text = balance.ToString());
         }

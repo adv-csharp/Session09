@@ -1,0 +1,16 @@
+﻿DB Access:
+	ADO
+		query tavasot developer
+		convert data be model tavasot developer
+	ORM
+		EF
+			Database First ❌
+			Code First
+
+			query tavasot EF
+			convert data be model tavasot EF
+
+	Micro ORM
+		Dapper
+			query tavasot developer
+			convert data be model tavasot Dapper

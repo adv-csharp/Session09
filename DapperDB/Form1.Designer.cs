@@ -36,6 +36,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnFindRolesAndUsers = new System.Windows.Forms.Button();
             this.sendEMail = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             // btnFindRolesAndUsers
             // 
-            this.btnFindRolesAndUsers.Location = new System.Drawing.Point(12, 230);
+            this.btnFindRolesAndUsers.Location = new System.Drawing.Point(12, 128);
             this.btnFindRolesAndUsers.Name = "btnFindRolesAndUsers";
             this.btnFindRolesAndUsers.Size = new System.Drawing.Size(162, 23);
             this.btnFindRolesAndUsers.TabIndex = 6;
@@ -110,7 +111,7 @@
             // 
             // sendEMail
             // 
-            this.sendEMail.Location = new System.Drawing.Point(12, 259);
+            this.sendEMail.Location = new System.Drawing.Point(12, 230);
             this.sendEMail.Name = "sendEMail";
             this.sendEMail.Size = new System.Drawing.Size(162, 23);
             this.sendEMail.TabIndex = 7;
@@ -118,11 +119,19 @@
             this.sendEMail.UseVisualStyleBackColor = true;
             this.sendEMail.Click += new System.EventHandler(this.sendEMail_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 259);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(162, 23);
+            this.progressBar1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.sendEMail);
             this.Controls.Add(this.btnFindRolesAndUsers);
             this.Controls.Add(this.dataGridView2);
@@ -149,5 +158,6 @@
         private DataGridView dataGridView2;
         private Button btnFindRolesAndUsers;
         private Button sendEMail;
+        private ProgressBar progressBar1;
     }
 }

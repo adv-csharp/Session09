@@ -59,21 +59,25 @@ namespace DapperDB
 
         private void sendEMail_Click(object sender, EventArgs e)
         {
+            progressBar1.Value = 0;
             //Thread
-            var thread = new Thread(() => SendEMail());
-            thread.Start();
+            var threadX = new Thread(() => SendEMail());
+            threadX.Start();
 
 
         }
 
-        private static void SendEMail()
+        private void SendEMail()
         {
             // I/O : Input/Output -> e.g. File, Email, Network, DB
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
+                /*progressBar1.Increment(1)*/;
+                progressBar1.Invoke(() => progressBar1.Increment(1));
             }
+            //Cross-thread operation not valid
         }
     }
 }

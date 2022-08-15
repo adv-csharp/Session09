@@ -5,6 +5,11 @@ namespace DapperDB
 {
     public partial class Form1 : Form
     {
+        /*
+         * Thread pool - 100
+         * 
+         * async / await
+         */
         public Form1()
         {
             InitializeComponent();
@@ -14,14 +19,22 @@ namespace DapperDB
         private void btnAddRole_Click(object sender, EventArgs e)
         {
             /*
-            * 1. new SQLConnection       
+            * 1. new SQLConnection 
+            * 
+            * I/O : Input / Output
+            * CLR
             */
 
-            using var connection = new SqlConnection(connString);
-            var parameters = new DynamicParameters(new { Name = "Test Ba Dapper" });
-            connection.Execute("INSERT INTO [dbo].[Roles] ([Name]) VALUES (@NAME)", parameters);
-            MessageBox.Show("OK");
+            insertDapper();
 
+        }
+
+        private async void insertDapper()
+        {
+            var connection = new SqlConnection(connString);
+            var parameters = new DynamicParameters(new { Name = "Test Ba Dapper" });
+            await connection.ExecuteAsync("INSERT INTO [dbo].[Roles] ([Name]) VALUES (@NAME)", parameters);
+            MessageBox.Show("OK");
         }
 
         private void btnAddRole2_Click(object sender, EventArgs e)
@@ -41,10 +54,10 @@ namespace DapperDB
             MessageBox.Show(role.Name);
         }
 
-        private void btnFindRoles_Click(object sender, EventArgs e)
+        private async void btnFindRoles_Click(object sender, EventArgs e)
         {
             using var connection = new SqlConnection(connString);
-            var roles = connection.Query<Role>("SELECT * FROM [dbo].[Roles] ");
+            var roles = await connection.QueryAsync<Role>("SELECT * FROM [dbo].[Roles] ");
             dataGridView1.DataSource = roles;
         }
 
@@ -115,6 +128,13 @@ namespace DapperDB
         private void labelBalance_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAsync_Click(object sender, EventArgs e)
+        {
+            var threadX = new Thread(() => Thread.Sleep(2000));
+            //Thread.Sleep(2000);
+            MessageBox.Show("OK");
         }
     }
 }

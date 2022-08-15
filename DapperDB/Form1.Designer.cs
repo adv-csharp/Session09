@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnRaceCondition = new System.Windows.Forms.Button();
+            this.btnAsync = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -134,6 +135,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAsync);
             this.panel1.Controls.Add(this.labelBalance);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.listBox1);
@@ -183,6 +185,16 @@
             this.btnRaceCondition.UseVisualStyleBackColor = true;
             this.btnRaceCondition.Click += new System.EventHandler(this.btnRaceCondition_Click);
             // 
+            // btnAsync
+            // 
+            this.btnAsync.Location = new System.Drawing.Point(435, 15);
+            this.btnAsync.Name = "btnAsync";
+            this.btnAsync.Size = new System.Drawing.Size(161, 23);
+            this.btnAsync.TabIndex = 13;
+            this.btnAsync.Text = "Async";
+            this.btnAsync.UseVisualStyleBackColor = true;
+            this.btnAsync.Click += new System.EventHandler(this.btnAsync_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -222,5 +234,6 @@
         private Label label1;
         private ListBox listBox1;
         private Button btnRaceCondition;
+        private Button btnAsync;
     }
 }
